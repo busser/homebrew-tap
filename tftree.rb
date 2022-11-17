@@ -5,21 +5,21 @@
 class Tftree < Formula
   desc "Display your Terraform module call stack"
   homepage "https://github.com/busser/tftree"
-  version "0.1.0-rc3"
+  version "0.1.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/busser/tftree/releases/download/v0.1.0-rc3/tftree_0.1.0-rc3_Darwin_arm64.tar.gz"
-      sha256 "8cb6a2b8b96223f047c3a538cdaee45fec4e7a377cb20663e46b083862354089"
+      url "https://github.com/busser/tftree/releases/download/v0.1.0/tftree_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "21ba24074c79b63bbd2e50e0fa885afa85175632b0b5678f42661b284299b923"
 
       def install
         bin.install "tftree"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/busser/tftree/releases/download/v0.1.0-rc3/tftree_0.1.0-rc3_Darwin_x86_64.tar.gz"
-      sha256 "ad6373daf916a0e53551554363e965f8a8ef8f617643947c38ab7b55311fe48e"
+      url "https://github.com/busser/tftree/releases/download/v0.1.0/tftree_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "ceb5aaca6077ca57ed106ecdde1f8d038c3f663309fd998f165bfea27047fb52"
 
       def install
         bin.install "tftree"
@@ -29,16 +29,16 @@ class Tftree < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/busser/tftree/releases/download/v0.1.0-rc3/tftree_0.1.0-rc3_Linux_arm64.tar.gz"
-      sha256 "ed2071080aabb224a42631226e51879045d4c0e9c18bddd275ca64e7cedaf570"
+      url "https://github.com/busser/tftree/releases/download/v0.1.0/tftree_0.1.0_Linux_arm64.tar.gz"
+      sha256 "dacacd2229fc6b2cf3c3bf714fb88d9d3b25c8b62a70e04c5d1fca87c566382d"
 
       def install
         bin.install "tftree"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/busser/tftree/releases/download/v0.1.0-rc3/tftree_0.1.0-rc3_Linux_x86_64.tar.gz"
-      sha256 "81c98e1517ab3aad5b8869bfda4cf14bab4d56faec8c6b26a9407dfb0f40cf42"
+      url "https://github.com/busser/tftree/releases/download/v0.1.0/tftree_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "5d9ae8bb79ee028fe2c5b3bdb47b510842370e5c676850906adf654597a8fc23"
 
       def install
         bin.install "tftree"
