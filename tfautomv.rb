@@ -5,21 +5,21 @@
 class Tfautomv < Formula
   desc "Generate Terraform moved blocks automatically for painless refactoring"
   homepage "https://github.com/busser/tfautomv"
-  version "0.5.2"
+  version "0.5.3"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.2/tfautomv_0.5.2_Darwin_arm64.tar.gz"
-      sha256 "2e09c8b3ba6daaa221041854bb3be0aa77a79d7dbf968451869a56a7d3440482"
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_darwin_arm64.tar.gz"
+      sha256 "42269ac737c366eed8edadaab31d83cf2cc13f55a6f24061a4bd05f31972e009"
 
       def install
         bin.install "tfautomv"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.2/tfautomv_0.5.2_Darwin_x86_64.tar.gz"
-      sha256 "ef4de55b8a74e0f663164fd9932685d37f15458cda62d6d651834a25f9f791a4"
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_darwin_amd64.tar.gz"
+      sha256 "37dddda3417cb51e97e82d005f7f0f632ff51f35dbabbebc00387740118bc5b3"
 
       def install
         bin.install "tfautomv"
@@ -28,17 +28,17 @@ class Tfautomv < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.2/tfautomv_0.5.2_Linux_x86_64.tar.gz"
-      sha256 "19fe250a734aa8415f15e9c13d39b81b372023709b5e5129b99b05a23f2dc367"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_linux_arm64.tar.gz"
+      sha256 "8b802425dc297e26d14c4e62f92dd8872970380e19aab6749dd4c10811376bf3"
 
       def install
         bin.install "tfautomv"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.2/tfautomv_0.5.2_Linux_arm64.tar.gz"
-      sha256 "9f49390248b781c1203ac21d5f3ccebdea7ed1688b53205aa3057da81655c240"
+    if Hardware::CPU.intel?
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_linux_amd64.tar.gz"
+      sha256 "3505f99c6f63c64dd3f5f8969af63eb3c8ad70adb5ae8ad973d9d3d5d5444d02"
 
       def install
         bin.install "tfautomv"
