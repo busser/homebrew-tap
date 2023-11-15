@@ -5,21 +5,21 @@
 class Tfautomv < Formula
   desc "Generate Terraform moved blocks automatically for painless refactoring"
   homepage "https://github.com/busser/tfautomv"
-  version "0.5.3"
+  version "0.5.4"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_darwin_arm64.tar.gz"
-      sha256 "42269ac737c366eed8edadaab31d83cf2cc13f55a6f24061a4bd05f31972e009"
+    if Hardware::CPU.intel?
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.4/tfautomv_0.5.4_darwin_amd64.tar.gz"
+      sha256 "7a00a90ff4f49a8e8450d848103310c2a3f97e5f7c4e951c3ae6ade92aa60366"
 
       def install
         bin.install "tfautomv"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_darwin_amd64.tar.gz"
-      sha256 "37dddda3417cb51e97e82d005f7f0f632ff51f35dbabbebc00387740118bc5b3"
+    if Hardware::CPU.arm?
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.4/tfautomv_0.5.4_darwin_arm64.tar.gz"
+      sha256 "316c6138c9604bb1676c625f7f7081f4703c8f23425afbd2a934e36477030382"
 
       def install
         bin.install "tfautomv"
@@ -29,16 +29,16 @@ class Tfautomv < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_linux_arm64.tar.gz"
-      sha256 "8b802425dc297e26d14c4e62f92dd8872970380e19aab6749dd4c10811376bf3"
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.4/tfautomv_0.5.4_linux_arm64.tar.gz"
+      sha256 "08aac091629ebaf167faedf871bcb70c10c7736ecd15d564c608bb3b5071e420"
 
       def install
         bin.install "tfautomv"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/busser/tfautomv/releases/download/v0.5.3/tfautomv_0.5.3_linux_amd64.tar.gz"
-      sha256 "3505f99c6f63c64dd3f5f8969af63eb3c8ad70adb5ae8ad973d9d3d5d5444d02"
+      url "https://github.com/busser/tfautomv/releases/download/v0.5.4/tfautomv_0.5.4_linux_amd64.tar.gz"
+      sha256 "a64e3a562c65b4642b8a9857ceafc229b3f4c19298d6e0c10141cbbc3ca5a695"
 
       def install
         bin.install "tfautomv"
