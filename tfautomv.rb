@@ -5,21 +5,21 @@
 class Tfautomv < Formula
   desc "Generate Terraform moved blocks automatically for painless refactoring"
   homepage "https://github.com/busser/tfautomv"
-  version "0.6.2"
+  version "0.7.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/busser/tfautomv/releases/download/v0.6.2/tfautomv_0.6.2_darwin_arm64.tar.gz"
-      sha256 "ef6d5554dcf6c9efbbd6a5a434fce0ce26f8cf794a84926e59c619aa46215f1e"
+    if Hardware::CPU.intel?
+      url "https://github.com/busser/tfautomv/releases/download/v0.7.0/tfautomv_0.7.0_darwin_amd64.tar.gz"
+      sha256 "0a19a41328437bef525578e8b2dfd98c79bf4eba40509eacff2a6a2e77228636"
 
       def install
         bin.install "tfautomv"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/busser/tfautomv/releases/download/v0.6.2/tfautomv_0.6.2_darwin_amd64.tar.gz"
-      sha256 "fcd0ab1dc3cbbae2db72b6309756583692a581fe76a3f7df009923977cd75142"
+    if Hardware::CPU.arm?
+      url "https://github.com/busser/tfautomv/releases/download/v0.7.0/tfautomv_0.7.0_darwin_arm64.tar.gz"
+      sha256 "c4422ef9929cedee90ed6803ac0c43640182e571992c718a8f8936dec07e7099"
 
       def install
         bin.install "tfautomv"
@@ -28,18 +28,16 @@ class Tfautomv < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/busser/tfautomv/releases/download/v0.6.2/tfautomv_0.6.2_linux_arm64.tar.gz"
-      sha256 "d059cfcaa108d026677a0bed9a99e29030204291cdfa837f98cef7f6c4589ced"
-
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/busser/tfautomv/releases/download/v0.7.0/tfautomv_0.7.0_linux_amd64.tar.gz"
+      sha256 "aac0bf3160b8a45fb628571ff1cbcecde4fdb252099a019c56cb861ccbd2952b"
       def install
         bin.install "tfautomv"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/busser/tfautomv/releases/download/v0.6.2/tfautomv_0.6.2_linux_amd64.tar.gz"
-      sha256 "42ec204fc55df3a8d157839ea94718c210360c7226082ea86e9573dfa6fffd23"
-
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/busser/tfautomv/releases/download/v0.7.0/tfautomv_0.7.0_linux_arm64.tar.gz"
+      sha256 "a568723179740e2904a731710ebc379e6c25c985d4da3b502c10b3b449537a10"
       def install
         bin.install "tfautomv"
       end
